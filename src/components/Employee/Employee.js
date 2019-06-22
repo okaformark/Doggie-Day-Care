@@ -12,7 +12,7 @@ class Employee extends React.Component {
     return (
       <div className = "Employee col-3">
         <div className="card">
-          <img src={employee.imageUrl} className="img-thumbnail" alt=""/>
+          <img src={employee.imageUrl} className="img-thumbnail img" alt=""/>
           <div className="card-body">
             <h5 className="card-title">{employee.position}</h5>
             <p className="card-text">{employee.name}</p>

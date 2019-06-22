@@ -19,7 +19,9 @@ class App extends React.Component {
     const { dogs, employees } = this.state;
     return (
       <div className="App">
+        <div className="headings">Doggies- A man's bestfriend</div>
         <DogPen dogs={dogs}/>
+        <div className="headings">Meet Our Employees</div>
         <StaffRoom employees={employees}/>
       </div>
     );
