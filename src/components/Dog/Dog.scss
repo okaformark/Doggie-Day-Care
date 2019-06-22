@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+.card {
+  width: 18rem;
+  height: auto;
+}
+.Dog {
+  display: flex;
+  justify-content: center;
+}
+.card-title{
+  font-family: 'Permanent Marker', cursive;
+}
+.card-text{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+.card img {
+height: 300px;
+}
