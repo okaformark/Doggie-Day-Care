@@ -14,7 +14,7 @@ class MyNavbar extends React.Component {
   };
 
   render() {
-    // const { authed } = this.props;
+    const { authed } = this.props;
     return (
       <div className="MyNavbar">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,7 +26,11 @@ class MyNavbar extends React.Component {
             <ul className="navbar-nav mr-auto">
             </ul>
             <form className="form-inline my-2 my-lg-0">
+              {authed ? (
                 <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.logMeOut}>LogOut</button>
+              ) : (
+                ''
+              )}
             </form>
           </div>
         </nav>
