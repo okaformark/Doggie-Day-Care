@@ -1,5 +1,5 @@
 import React from 'react';
-// import firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConnection from '../helpers/data/connection';
 import './App.scss';
@@ -14,20 +14,28 @@ class App extends React.Component {
     authed: false,
   }
 
-  // componentDidMount() {
-
-  // }
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
 
   render() {
-    // const { authed } = this.state;
-    // const loadComponent = () => {
-    //   if ()
-    // }
+    const { authed } = this.state;
+    const loadComponent = () => {
+      if (authed) {
+        return <Home />;
+      }
+      return <Auth />;
+    };
     return (
       <div className="App">
         <MyNavbar />
-        <Auth />
-        <Home />
+        {loadComponent()}
       </div>
     );
   }
